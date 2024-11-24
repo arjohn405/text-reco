@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #007bff;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  background: #fff;
+  margin: 2em auto;
+  padding: 2em;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #fff;
+  margin: 0.5em 0;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li strong {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+ul li em {
+  color: #555;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.highlight-profile {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+
+.btn {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.highlight-profile {
+  background-color: #ffeb3b; /* Yellow for profile keywords */
+  font-weight: bold;
+}
+
+.highlight-hackathon {
+  background-color: #90caf9; /* Light blue for hackathon keywords */
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.highlight-profile {
+  background-color: #ffeb3b; /* Yellow for profile keywords */
+  font-weight: bold;
+}
+
+.highlight-hackathon {
+  background-color: #90caf9; /* Light blue for hackathon keywords */
+  font-weight: bold;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explanation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <h1>Understanding the Recommendation System</h1>
+</header>
+<div class="container">
+    <h2>Sliding Window Technique</h2>
+    <p>
+        <strong>What it does:</strong> The sliding window breaks long texts into chunks with overlapping words. This ensures no important contextual information is lost.
+    </p>
+    <p><strong>Chunks Generated:</strong></p>
+    <ul>
+        {% for chunk in visualization_data.chunks %}
+            <li>{{ chunk }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Number of Chunks:</strong> {{ visualization_data.num_chunks }}</p>
+
+    <h2>SBERT Embeddings</h2>
+    <p>
+        <strong>What it does:</strong> SBERT generates embeddings for each chunk, then averages these embeddings to create a single vector representation for the entire text.
+    </p>
+    <p><strong>Shape of Averaged Embedding:</strong> {{ visualization_data.embedding_shape }}</p>
+
+    <h2>Cosine Similarity</h2>
+    <p>
+        <strong>What it does:</strong> Cosine similarity calculates the similarity between the averaged embedding of your profile and the embeddings of each hackathon description.
+    </p>
+    
+    <h2>Visualization</h2>
+    <canvas id="chunksChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('chunksChart').getContext('2d');
+        const data = {
+            labels: {{ visualization_data.chunks | tojson | safe }},
+            datasets: [{
+                label: 'Chunk Lengths',
+                data: {{ visualization_data.chunk_lengths | tojson | safe }},
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const chunksChart = new Chart(ctx, config);
+    </script>
+
+    <!-- Back Button -->
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+</div>
+</body>
+</html>
